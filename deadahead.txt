@@ -1,0 +1,23 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main() {
+    FILE* in = fopen("Input.txt", "r");
+    FILE* out = fopen("Output.txt", "w");
+
+    int n, max, x;
+
+    fscanf(in, "%d", &n);
+    fscanf(in, "%d", &max);
+
+    for (int i = 1; i < n; i++) {
+        fscanf(in, "%d", &x);
+        if (x > max) max = x;
+    }
+
+    fprintf(out, "%d", max);
+
+    fclose(in);
+    fclose(out);
+    return 0;
+}
